@@ -1,9 +1,9 @@
 /*!
- * jQuery Seperate Plugin v1.0.0
- * https://github.com/davemedema/jquery-seperate
+ * jquery-seperate
  *
  * @author Dave Medema / @davemedema
- * @version 1.0.0
+ * @homepage https://github.com/davemedema/jquery-seperate
+ * @version 0.1.0
  * @preserve
  *
  * Copyright 2013 Dave Medema
@@ -16,8 +16,8 @@
   'use strict';
 
   var Seperate = function(element, options) {
-    this.$element = $(element);
-    this.options = $.extend({}, $.fn.seperate.defaults, options || {});
+    this.$el = $(element);
+    this.opts = $.extend({}, $.fn.seperate.defaults, options || {});
     this.insert();
   };
 
@@ -31,10 +31,10 @@
           rowTop = 0;
 
       // Clear old seperators
-      $('.sep', this.$element).remove();
+      $('.sep', this.$el).remove();
 
       // Match rows
-      this.$element.children().each(function() {
+      this.$el.children().each(function() {
         var $el = $(this);
 
         if ($el.position().top !== rowTop) {
@@ -94,4 +94,4 @@
   // Seperate on resize
   $(window).resize(seperate);
 
-})(window.jQuery);
+})(jQuery);
